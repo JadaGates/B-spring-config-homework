@@ -6,7 +6,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @SpringBootTest
@@ -18,10 +20,6 @@ public class LevelControllerTests {
 
     @Test
     public void shouldReturnBasicWhenLevelNumberLessThanOne() throws Exception {
-        String result = mockMvc.perform(get("/level"))
-                .andReturn()
-                .getResponse()
-                .getContentAsString();
-        assertEquals("basic", result);
+        this.mockMvc.perform(get("/level")).andExpect(content().string(containsString("basic")));
     }
 }
