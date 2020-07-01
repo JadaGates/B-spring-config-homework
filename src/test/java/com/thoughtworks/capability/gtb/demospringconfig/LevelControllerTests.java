@@ -11,7 +11,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(properties = "levelNumber = 0")
+@TestPropertySource(locations = "classpath:application.properties")
 public class LevelControllerTests {
     @Autowired
     private MockMvc mockMvc;

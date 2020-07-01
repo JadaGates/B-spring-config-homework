@@ -4,7 +4,7 @@
 
 使用 @ConfigurationProperties 时支持读取 List、Map 以及 Class 形式的 nested properties。
 
-具体需要读取的 properties 已经在 `src/main/resources/application.properties` 中给出，请在分支 `p1-starts-from-here` 上继续完成剩余的代码。
+具体需要读取的 properties 已经在 `src/main/resource/application.properties` 中给出，请在分支 `p1-starts-from-here` 上继续完成剩余的代码。
 
 期望在程序启动时，在命令行输出相应的属性和值，就像已提供的代码所完成的一样。
 
